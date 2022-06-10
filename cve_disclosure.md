@@ -172,3 +172,11 @@ condup(no)->opupn->e
 3.需要修改当前SA项目中对于数据的插入，从删除变为更新
 
 4.新增可批漏cve文件导入接口,讨论是使用手动触发,定时任务先搁置
+
+### 数据上传
+
+#### 1. 原始数据上传
+- cve-manager将数据上传至cve-manager-disclosure文件夹下以日期文件夹作为分界
+#### 2. 官网后台触发
+- 将需要触发的数据上传到disclosure-cve文件夹下，并更新update_disclosure.txt文件，文件内容同SA生成内容类似
+- 官网后台触发后，cve-manager会将触发的数据保存在cve-manager-disclosure对应日期文件下·index-触发时间.txt·内，并置空index.txt。当天后续的增量在index.txt查看
